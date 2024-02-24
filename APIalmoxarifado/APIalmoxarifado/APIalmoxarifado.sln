@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIalmoxarifado", "APIalmoxarifado\APIalmoxarifado.csproj", "{EAF8B343-1EEA-4B7C-834D-7FF40C1E6687}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAF8B343-1EEA-4B7C-834D-7FF40C1E6687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF8B343-1EEA-4B7C-834D-7FF40C1E6687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF8B343-1EEA-4B7C-834D-7FF40C1E6687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF8B343-1EEA-4B7C-834D-7FF40C1E6687}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C26C3AC-EE2C-415D-BE30-DE740A5D5130}
+	EndGlobalSection
+EndGlobal
