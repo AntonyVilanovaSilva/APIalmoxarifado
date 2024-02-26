@@ -9,7 +9,8 @@ namespace APIalmoxarifado.Controllers
     [Route("api/v1/produto")]
     public class ProdutoController : Controller
     {
-         private  readonly IProdutoRepository _produtosRepository = new ProdutoRepository();
+         private  readonly IProdutoRepository _produtosRepository;
+         
 
         public ProdutoController(IProdutoRepository repositorio)
         {

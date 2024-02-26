@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ygkfROOJ9DZOYwu1AeCSSbPMjntzNqjAPCVvC5bhQRahQB40v9+PfozHRfrXpLjweuT2j2c6ofqHLwnmfoO/IQ==",
+  "dgSpecHash": "QaPU+7sYOJ3jooNXoDYtBSnlZGxZKM9sbVlfHoJb7//3vZAQk5l1oDS9PfPP5VhNYvMV+1cU93nQA43ilMQuRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\APIalmoxarifado\\APIalmoxarifado\\APIalmoxarifado\\APIalmoxarifado.csproj",
+  "projectFilePath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\APIalmoxarifado\\APIalmoxarifado\\APIalmoxarifado\\APIalmoxarifado\\APIalmoxarifado.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manha.cetafest\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\manha.cetafest\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",
