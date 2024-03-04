@@ -9,5 +9,9 @@ namespace APIalmoxarifado.Repository
 
         void Add (Produto produto);
 
+        Task<bool> DeleteProduto(int id);
+
+        Task<Produto> UpdateProduto(Produto Model);
+
     }
 }

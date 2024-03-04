@@ -10,6 +10,6 @@ namespace APIalmoxarifado.Models
         public int estoque { get; set; } 
         public string? photourl { get; set;}
 
-        public Categoria categoria { get; set; }
+        
     }
 }

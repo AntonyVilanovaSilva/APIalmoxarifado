@@ -7,5 +7,9 @@ namespace APIalmoxarifado.Repository
         List<Categoria> GetAll();
 
         void Add(Categoria Categoria);
+
+        Task<bool> DeleteCategoria(int id);
+
+        Task<Categoria> UpdateCategoria(Categoria Model);
     }
 }

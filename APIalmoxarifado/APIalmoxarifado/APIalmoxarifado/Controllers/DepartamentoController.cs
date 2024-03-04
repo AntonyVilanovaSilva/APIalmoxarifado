@@ -15,24 +15,6 @@ namespace APIalmoxarifado.Controllers
             _departamentoRepository = repositorio;
         }
 
-
-        [HttpPost]
-        [Route("GetAllFake")]
-        public IActionResult GetAllFake()
-        {
-            var departamentos = new List<Departamento>()
-            {
-              new Departamento()
-              {
-                  id = 1,
-                  descricao="1",
-
-              },
-
-            };
-            return Ok(departamentos);
-        }
-
         [HttpGet]
         [Route("GetAll")]
 
@@ -41,7 +23,10 @@ namespace APIalmoxarifado.Controllers
             return Ok(_departamentoRepository.GetAll());
         }
 
-        
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> UpdateDepartamento(Departamento Model) => Ok(await _departamentoRepository.UpdateDepartamento(Model));
+                
 
     }
 }

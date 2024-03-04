@@ -15,36 +15,7 @@ namespace APIalmoxarifado.Controllers
         {
             _categoriaRepository = repositorio;
         }
-
-
-        [HttpPost]
-        [Route("GetAllFake")]
-        public IActionResult GetAllFake()
-        {
-            var categorias = new List<Categoria>()
-            {
-              new Categoria()
-              {
-                  id = 1,
-                  descricao="Latícinios",
-                  
-              },
-              new Categoria()
-              {
-                id=2,
-                descricao="Eletronicos",
-                
-              },
-              new Categoria
-              {
-                  id = 3,
-                  descricao="Bebidas",
-              }
-
-
-            };
-            return Ok(categorias);
-        }
+     
 
         [HttpGet]
         [Route("GetAll")]
@@ -63,5 +34,13 @@ namespace APIalmoxarifado.Controllers
             return Ok("Massa");
         }
 
+        [HttpDelete]
+        [Route("/Delete/{id}")]
+
+        public async Task<IActionResult> DeleteCategoria(int id) => Ok(await _categoriaRepository.DeleteCategoria(id));
+
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> UpdateCategoria(Categoria Model) => Ok(await _categoriaRepository.UpdateCategoria(Model));
     }
 }

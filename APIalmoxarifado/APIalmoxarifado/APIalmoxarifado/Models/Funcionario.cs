@@ -4,7 +4,7 @@
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string carga { get; set; }
+        public string cargo { get; set; }
         public DateTime datanascimento { get; set; }
 
         public decimal salario { get; set; }

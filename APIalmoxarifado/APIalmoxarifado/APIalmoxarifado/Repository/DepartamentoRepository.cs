@@ -1,5 +1,7 @@
 ﻿using APIalmoxarifado.Infraestrutura;
 using APIalmoxarifado.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace APIalmoxarifado.Repository
 {
@@ -17,9 +19,24 @@ namespace APIalmoxarifado.Repository
             return bdConexao.Departamento.ToList();
         }
 
-        object? IDepartamentoRepository.GetAll()
+        [HttpDelete]
+
+        public async Task<bool> DeleteDepartamento(int id)
         {
-            throw new NotImplementedException();
+            var c = await bdConexao.Departamento.FirstOrDefaultAsync(x => x.id == id);
+            bdConexao.Departamento.Remove(c);
+            await bdConexao.SaveChangesAsync();
+            return true;
         }
+
+        public async Task<Departamento> UpdateDepartamento(Departamento Model)
+        {
+            bdConexao.Update(Model);
+            await bdConexao.SaveChangesAsync();
+            return Model;
+        }
+
+
+
     }
 }

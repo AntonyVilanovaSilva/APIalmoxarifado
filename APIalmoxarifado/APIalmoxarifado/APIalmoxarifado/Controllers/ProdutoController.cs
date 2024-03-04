@@ -1,7 +1,9 @@
-﻿using APIalmoxarifado.Models;
+﻿using APIalmoxarifado.Infraestrutura;
+using APIalmoxarifado.Models;
 using APIalmoxarifado.Repository;
 using APIalmoxarifado.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace APIalmoxarifado.Controllers
 {
@@ -10,7 +12,10 @@ namespace APIalmoxarifado.Controllers
     public class ProdutoController : Controller
     {
          private  readonly IProdutoRepository _produtosRepository;
-         
+
+
+        ConexaoSQL bdConexao = new ConexaoSQL();
+
 
         public ProdutoController(IProdutoRepository repositorio)
         {
@@ -140,6 +145,14 @@ namespace APIalmoxarifado.Controllers
             
             
         }
-        
+
+
+        [HttpDelete]
+        [Route("/Delete/{id}")]
+        public async Task<IActionResult> DeleteProduto(int id) => Ok(await _produtosRepository.DeleteProduto(id));
+
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> UpdateProduto(Produto Model) => Ok(await _produtosRepository.UpdateProduto(Model));
     }
 }

@@ -4,15 +4,10 @@ namespace APIalmoxarifado.Repository
 {
     public interface IDepartamentoRepository
     {
-        object? GetAll();
+        List<Departamento> GetAll();
 
-        public interface IDepartamentoRepository
-        {
+        void Add(Departamento departamento);
 
-            List<Departamento> GetAll();
-
-            void Add(Departamento departamento);
-
-        }
+        Task<Departamento> UpdateDepartamento(Departamento Model);
     }
 }
