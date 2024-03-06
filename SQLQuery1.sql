@@ -69,6 +69,24 @@ FOREIGN KEY (CatId) REFERENCES CategoriaMotivo(CatId)
 
 Insert Motivo (descricao) values ('')
 
+Create Table Requisicao(
+Codigo int identity(1,1) primary key,
+DataRequisicao datetime null,
+)
+
+Create Table ItensRequisicao(
+IteId int identity(1,1) primary key,
+CodigoRequisicao int not null,
+CodigoProduto int not null,
+Preco float null default(0),
+Quantidade int not null default(0),
+CONSTRAINT FK_itenRequisicao FOREIGN KEY (CodigoRequisicao)
+REFERENCES Requisicao(Codigo),
+CONSTRAINT FK_itenProducao FOREIGN KEY (CodigoProduto)
+REFERENCES Requisicao(id)
+)
+
+Select * from Requisicao
 Select * from Departamento
 Select * from Produto
 Select * from Categoria

@@ -4,29 +4,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace APIalmoxarifado.Repository
 {
-    public class CategoriaRepository: ICategoriaRepository
+    public class MotivoSaidaRepository: IMotivoSaidaRepository
     {
         ConexaoSQL bdConexao = new ConexaoSQL();
 
-        public void Add(Categoria categoria)
+        public void Add(MotivoSaida motivoSaida)
         {
-            bdConexao.Add(categoria);
+            bdConexao.Add(motivoSaida);
             bdConexao.SaveChanges();
         }
-        public List<Categoria> GetAll()
+        public List<MotivoSaida> GetAll()
         {
-            return bdConexao.Categoria.ToList();
+            return bdConexao.MotivoSaida.ToList();
         }
 
-        public async Task<bool> DeleteCategoria(int id)
+        public async Task<bool> DeleteMotivoSaida(int id)
         {
-            var e = await bdConexao.Categoria.FirstOrDefaultAsync(x => x.id == id);
-            bdConexao.Categoria.Remove(e);
+            var f = await bdConexao.MotivoSaida.FirstOrDefaultAsync(x => x. == id);
+            bdConexao.MotivoSaida.Remove(f);
             await bdConexao.SaveChangesAsync();
             return true;
         }
-
-        public async Task<Categoria> UpdateCategoria(Categoria Model)
+        public async Task<MotivoSaida> UpdateMotivoSaida(MotivoSaida Model)
         {
             bdConexao.Update(Model);
             await bdConexao.SaveChangesAsync();

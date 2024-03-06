@@ -23,6 +23,11 @@ namespace APIalmoxarifado.Controllers
             return Ok(_departamentoRepository.GetAll());
         }
 
+        [HttpDelete]
+        [Route("/Delete/{id}")]
+
+        public async Task<IActionResult> DeleteDepartamento(int id) => Ok(await _departamentoRepository.DeleteDepartamento(id));
+
         [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> UpdateDepartamento(Departamento Model) => Ok(await _departamentoRepository.UpdateDepartamento(Model));
