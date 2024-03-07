@@ -60,14 +60,14 @@ descricao varchar(100) not null
 
 Insert CategoriaMotivo (descricao) values ('')
 
-Create Table MoitvoSaida(
+Create Table MotivoSaida(
 MotId int identity(1,1) primary key,
 descricao varchar(100) not null,
 CatId int,
 FOREIGN KEY (CatId) REFERENCES CategoriaMotivo(CatId)
 )
 
-Insert Motivo (descricao) values ('')
+Insert MotivoSaida (descricao) values ('')
 
 Create Table Requisicao(
 Codigo int identity(1,1) primary key,
@@ -86,8 +86,34 @@ CONSTRAINT FK_itenProducao FOREIGN KEY (CodigoProduto)
 REFERENCES Requisicao(id)
 )
 
+Create Table Motivo(
+Codigo int identity(1,1) primary key,
+Descricao varchar(100) not null,
+CodigoCategoriaMotivo int not null,
+Constraint Fk_CategoriaMotivo_Motivo Foreign key(Codigo)
+References CategoriaMotivo(CatId)
+)
+
+Create table Cargo(
+CaId int identity(1,1) primary key,
+descricao varchar(100) not null,
+localizacao varchar(100) not null,
+)
+
+Create table RestricaoCargo(
+CONSTRAINT FK_codfuncionario FOREIGN KEY (id)
+REFERENCES Funcionario(id),
+CONSTRAINT FK_codproduto FOREIGN KEY (id)
+REFERENCES Produto (id)
+
+)
+
 Select * from Requisicao
 Select * from Departamento
 Select * from Produto
 Select * from Categoria
 Select * from Funcionario
+Select * from MoitvoSaida
+Select * from CategoriaMotivo
+Select * from Cargo
+Select * from RestricaoCargo

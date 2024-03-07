@@ -20,7 +20,7 @@ namespace APIalmoxarifado.Repository
 
         public async Task<bool> DeleteMotivoSaida(int id)
         {
-            var f = await bdConexao.MotivoSaida.FirstOrDefaultAsync(x => x. == id);
+            var f = await bdConexao.MotivoSaida.FirstOrDefaultAsync(x => x.MotId == id);
             bdConexao.MotivoSaida.Remove(f);
             await bdConexao.SaveChangesAsync();
             return true;

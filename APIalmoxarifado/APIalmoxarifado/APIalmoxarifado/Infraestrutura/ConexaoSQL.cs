@@ -14,10 +14,12 @@ namespace APIalmoxarifado.Infraestrutura
         {
             modelBuilder.Entity<Requisicao>()
            .HasMany(e => e.itens)
-           .WhitOne(e => e.Requisicao)
-           .HasForeignkey(e => e.codigoRequisicao)
-           .HasPrincipalKey(e => e.codigo);
+           .WithOne(e => e.requisicao)
+           .HasForeignKey(e => e.CodigoRequisicao)
+           .HasPrincipalKey(e => e.Codigo);
         }
+        
+
 
 
 
@@ -32,6 +34,9 @@ namespace APIalmoxarifado.Infraestrutura
 
         public DbSet<MotivoSaida> MotivoSaida { get; set; }
 
+        public DbSet<Motivo> motivos { get; set; }    
         
+        public DbSet<ItensRequisicao> itensRequisicaos { get; set; }    
+        public DbSet<Requisicao> Requisicao { get; set;}
     }
 }

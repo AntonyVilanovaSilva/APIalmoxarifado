@@ -1,12 +1,13 @@
 ﻿using APIalmoxarifado.Models;
 using APIalmoxarifado.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace APIalmoxarifado.Controllers
 {
     [ApiController]
     [Route("api/v1/requisicao")]
-    public class Requisicao
+    public class RequisicaoController : Controller
     {
         public IActionResult AdicionarRequisicao(ViewModelRequisicaoProdutoAdicionar carrinho) 
         {
@@ -14,12 +15,12 @@ namespace APIalmoxarifado.Controllers
             var requisicao = new Requisicao()
             {
                 DataRequisicao = DateTime.Now,
-                departamento = new Departamento() {  Codigo= carrinho.codigoDepartamento},
-                itens
+                Departamento = new Departamento() { id = carrinho.codigoDepartamento},
+                itens = carrinho.itens
 
 
             };
-        
+            return View();
         
         }
 

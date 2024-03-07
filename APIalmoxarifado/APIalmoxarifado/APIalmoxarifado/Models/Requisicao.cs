@@ -9,6 +9,10 @@ namespace APIalmoxarifado.Models
 
         public DateTime DataRequisicao { get; set; }
 
+        public Departamento Departamento { get; set; }
+
+        public Funcionario Funcionario { get; set; }
+
         public List<ItensRequisicao> itens { get; set; }
      
     }

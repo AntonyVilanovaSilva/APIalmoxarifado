@@ -32,6 +32,8 @@ namespace APIalmoxarifado.Repository
             await bdConexao.SaveChangesAsync();
             return Model;
         }
+
+        
     }
 }
 
