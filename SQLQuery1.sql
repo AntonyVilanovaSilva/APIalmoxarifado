@@ -105,6 +105,25 @@ CONSTRAINT FK_codfuncionario FOREIGN KEY (id)
 REFERENCES Funcionario(id),
 CONSTRAINT FK_codproduto FOREIGN KEY (id)
 REFERENCES Produto (id)
+)
+
+Create table Entrada(
+codigo int identity(1,1) primary key,
+dataentrada datetime,
+produto varchar(100) not null
+)
+
+Create Table ItensEntrada(
+codigo int identity(1,1) primary key,
+CodigoEntrada int not null,
+CodigoProduto int not null,
+Estoque int not null,
+entrada_id int not null,
+FOREIGN KEY (entrada_id) REFERENCES Entrada(codigo)
+)
+
+Create table Escolaridade(
+
 
 )
 
@@ -117,3 +136,5 @@ Select * from MoitvoSaida
 Select * from CategoriaMotivo
 Select * from Cargo
 Select * from RestricaoCargo
+Select * from Entrada
+Select * from ItensEntrada
