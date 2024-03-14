@@ -12,17 +12,39 @@ namespace APIalmoxarifado.Infraestrutura
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Entrada>()
+           .HasMany(e => e.itens)
+           .WithOne(e => e.requisicao)
+           .HasForeignKey(e => e.CodigoRequisicao)
+           .HasPrincipalKey(e => e.Codigo);
+
+            modelBuilder.Entity<Produto>()
+           .HasMany(e => e.ItensEntrada)
+           .WithOne(e => e.Produto)
+           .HasForeignKey(e => e.CodigoRequisicao)
+           .HasPrincipalKey(e => e.Codigo);
+
             modelBuilder.Entity<Requisicao>()
            .HasMany(e => e.itens)
            .WithOne(e => e.requisicao)
            .HasForeignKey(e => e.CodigoRequisicao)
            .HasPrincipalKey(e => e.Codigo);
+
+            modelBuilder.Entity<Produto>()
+           .HasMany(e => e.itens)
+           .WithOne(e => e.requisicao)
+           .HasForeignKey(e => e.CodigoRequisicao)
+           .HasPrincipalKey(e => e.Codigo);
+
+            modelBuilder.Entity<CategoriaMotivo>()
+           .HasMany(e => e.itens)
+           .WithOne(e => e.requisicao)
+           .HasForeignKey(e => e.CodigoRequisicao)
+           .HasPrincipalKey(e => e.Codigo);
+
+
         }
         
-
-
-
-
         public DbSet<Produto> Produto {  get; set; } 
         public DbSet<Categoria> Categoria {  get; set; } 
 
@@ -38,5 +60,11 @@ namespace APIalmoxarifado.Infraestrutura
         
         public DbSet<ItensRequisicao> itensRequisicaos { get; set; }    
         public DbSet<Requisicao> Requisicao { get; set;}
+
+        public DbSet<Entrada> Entrada { get; set; }
+
+        public DbSet<ItensEntrada> ItensEntrada { get; set; }
+
+        public DbSet<Escolaridade> Escolaridade { get; set; } 
     }
 }

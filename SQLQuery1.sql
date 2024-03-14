@@ -49,6 +49,7 @@ Create table Funcionario(
  endereco varchar(100) not null,
  cidade varchar(100) not null,
  uf varchar(100) not null
+ 
 )
 
 Insert Funcionario (nome,cargo,datanascimento,salario,endereco,cidade,uf) values ('Antony','Engenheiro Agronomo','18/03/2007','20000','Valadares','Estancia','SE')
@@ -123,9 +124,18 @@ FOREIGN KEY (entrada_id) REFERENCES Entrada(codigo)
 )
 
 Create table Escolaridade(
-
-
+cod_escolaridade int identity(1,1) primary key,
+descricao varchar(100) null,
 )
+ALTER TABLE Funcionario ADD cod_escolaridade INT
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Escolaridade FOREIGN KEY (cod_escolaridade) REFERENCES Escolaridade(cod_escolaridade)
+
+Insert Escolaridade (descricao) values ('Ensino Médio')
+Insert Escolaridade (descricao) values ('Ensino Superior')
+Insert Escolaridade (descricao) values ('Graduação')
+
+
+Delete from Escolaridade
 
 Select * from Requisicao
 Select * from Departamento
@@ -138,3 +148,4 @@ Select * from Cargo
 Select * from RestricaoCargo
 Select * from Entrada
 Select * from ItensEntrada
+Select * from Escolaridade

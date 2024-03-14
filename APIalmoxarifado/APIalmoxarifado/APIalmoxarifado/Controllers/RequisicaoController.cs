@@ -9,6 +9,8 @@ namespace APIalmoxarifado.Controllers
     [Route("api/v1/requisicao")]
     public class RequisicaoController : Controller
     {
+        [HttpGet]
+        [Route("AdicionarRequisicao")]
         public IActionResult AdicionarRequisicao(ViewModelRequisicaoProdutoAdicionar carrinho) 
         {
 
